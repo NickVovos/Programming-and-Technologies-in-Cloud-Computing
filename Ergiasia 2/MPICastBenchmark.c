@@ -36,24 +36,6 @@ int main(int argc, char *argv[]) {
     if (rank == 0)
     {
         start_time = MPI_Wtime();
-        for (int dest = 1; dest < size; dest++) {
-            MPI_Send(data, N, MPI_INT, dest, 0, MPI_COMM_WORLD);
-        }
-    }
-    else { 
-            MPI_Recv(data, N, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-    }
-
-    if (rank == 0) {
-        double endTime = MPI_Wtime();
-        printf("Simple forLoop Time needed: %.6f seconds\n", endTime - start_time);
-    }
-
-    MPI_Barrier(MPI_COMM_WORLD);
-
-    if (rank == 0)
-    {
-        start_time = MPI_Wtime();
     }
 
 
