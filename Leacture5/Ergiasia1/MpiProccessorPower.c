@@ -46,8 +46,6 @@ int main(int argc, char **argv)
         }
     }
 
-    enum NodeMessage currentMsg = MSG_RequestNodeCapacity;
-
     MPI_Gather(&localNodeCapacity, 1, MPI_INT, rawCapacities, 1, MPI_INT, masterNode, MPI_COMM_WORLD);
 
     if (nodeId == masterNode)
