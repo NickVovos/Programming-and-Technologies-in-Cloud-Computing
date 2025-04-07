@@ -6,12 +6,6 @@
 
 #define DATA_SIZE 50
 
-enum NodeMessage
-{
-    MSG_None = 0,
-    MSG_RequestNodeCapacity = 1
-};
-
 int main(int argc, char **argv)
 {
     int nodeId, totalNodes;
